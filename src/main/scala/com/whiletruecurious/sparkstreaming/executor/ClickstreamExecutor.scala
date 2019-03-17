@@ -63,7 +63,7 @@ object ClickstreamExecutor {
       * |-- timestampType: integer (nullable = true)
       */
     val inputDf: DataFrame = spark
-      .readStream // Stream Reader
+      .readStream
       .format(inputSourceType)
       .option("kafka.bootstrap.servers", inputKafkaServer)
       .option("subscribe", inputKafkaTopic)
